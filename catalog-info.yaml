@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nodejs-vwjtnkib-gitops
+  description: This is GitOps manifest for nodejs-vwjtnkib   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=nodejs-vwjtnkib
+    backstage.io/kubernetes-id: nodejs-vwjtnkib 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: nodejs-vwjtnkib
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:nodejs-vwjtnkib
